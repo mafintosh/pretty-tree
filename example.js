@@ -31,6 +31,8 @@ var str = tree({
 					value: 'her',
 					count: 42
 				},
+				empty: [],
+				empty2: {},
 				list: [
 					11,
 					22,

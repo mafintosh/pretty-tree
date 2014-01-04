@@ -24,6 +24,8 @@ var leaf = function(obj) {
 		return max.length >= val.length ? max : val.replace(/./g, ' ');
 	}, ' ');
 
+	if (!atomic.length && !nonAtomic.length) return ['(empty)'.grey];
+
 	atomic.forEach(function(key) {
 		var val = (obj[key]+'').replace(/\n/g, '\n  '+pad);
 		key = key+':'+pad.slice(key.length-pad.length-1);
