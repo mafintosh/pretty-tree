@@ -22,6 +22,7 @@ var str = tree({
 				foo: 'bar',
 				bar: true,
 				foobar:'baz',
+				multiline:'foo\nbar\nbaz',
 				nested: {
 					value: 'her',
 					count: 42

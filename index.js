@@ -25,7 +25,7 @@ var leaf = function(obj) {
 	}, ' ');
 
 	atomic.forEach(function(key) {
-		var val = obj[key]+'';
+		var val = (obj[key]+'').replace(/\n/g, '\n  '+pad);
 		key = key+':'+pad.slice(key.length-pad.length-1);
 		nodes.push(isArray ? val : (key.cyan+val));
 	});
