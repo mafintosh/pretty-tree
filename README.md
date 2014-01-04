@@ -1,13 +1,13 @@
-# color-tree
+# pretty-tree
 
 Make colorful trees out of JSON objects using [archy](https://github.com/substack/node-archy)
 
-	npm install color-tree
+	npm install pretty-tree
 
 ## Usage
 
 ``` js
-var tree = require('color-tree');
+var tree = require('pretty-tree');
 
 var str = tree({
 	label: '(root)', // the label of this node
@@ -25,7 +25,7 @@ console.log(str);
 
 The above example results in the following output:
 
-![example](https://raw.github.com/mafintosh/color-tree/master/example.png)
+![example](https://raw.github.com/mafintosh/pretty-tree/master/example.png)
 
 The node passed to tree can contain the following options
 
