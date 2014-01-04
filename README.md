@@ -4,7 +4,7 @@ Make colorful trees out of JSON objects using [archy](https://github.com/substac
 
 	npm install color-tree
 
-# Usage
+## Usage
 
 ``` js
 var tree = require('color-tree');
@@ -31,12 +31,19 @@ The node passed to tree can contain the following options
 
 ``` js
 tree({
-	label: 'an optional label to print as a header',
-	leaf: json_object_leaf,
-	nodes: [
+	label: '(child)', // an optional lable of this node
+	leaf: {           // set this if you want to print an object
+		key: value,
+		...
+	},
+	nodes: [          // or put in some child nodes
 		child_nodes_with_same_structure
 	]
 })
 ```
 
 Note you can't have both `.nodes` and `.leaf`
+
+## License
+
+MIT
