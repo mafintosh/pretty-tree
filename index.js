@@ -42,7 +42,7 @@ var leaf = function(obj) {
 var visit = function(node) {
 	if (node.label) node.label = node.label.yellow;
 	if (node.nodes) node.nodes = [].concat(node.nodes).map(visit);
-	if (node.leaf)  node.nodes = leaf(node.leaf);
+	if (node.leaf)  node.nodes = [].concat(node.nodes || [], leaf(node.leaf));
 	return node;
 };
 

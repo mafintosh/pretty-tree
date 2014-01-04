@@ -42,8 +42,6 @@ tree({
 })
 ```
 
-Note you can't have both `.nodes` and `.leaf`
-
 ## License
 
 MIT
