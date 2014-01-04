@@ -48,8 +48,8 @@ var visit = function(node) {
 
 var tree = function(node) {
 	return archy(visit(node))
-		.replace(/([├└])─┬ \n[│ ]+[├]/gm, '$1─┬')
-		.replace(/([├└])─┬ \n[│ ]+[└]/gm, '$1──')
+		.replace(/([├└])─┬ \n[│ ]+├/gm, '$1─┬')
+		.replace(/([├└])─┬ \n[│ ]+└/gm, '$1──')
 		.replace(/[┬├─└│┐]/g, function(_) {
 			return _.grey;
 		});
