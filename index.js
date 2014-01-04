@@ -1,5 +1,5 @@
 var archy = require('archy');
-var colors = require('colors');
+var chalk = require('chalk');
 
 var isAtomic = function(v) {
 	return v === null || v === undefined || typeof v !== 'object';
@@ -24,23 +24,23 @@ var leaf = function(obj) {
 		return max.length >= val.length ? max : val.replace(/./g, ' ');
 	}, ' ');
 
-	if (!atomic.length && !nonAtomic.length) return ['(empty)'.grey];
+	if (!atomic.length && !nonAtomic.length) return [chalk.grey('(empty)')];
 
 	atomic.forEach(function(key) {
 		var val = (obj[key]+'').replace(/\n/g, '\n  '+pad);
 		key = key+':'+pad.slice(key.length-pad.length-1);
-		nodes.push(isArray ? val : (key.cyan+val));
+		nodes.push(isArray ? val : (chalk.cyan(key)+val));
 	});
 
 	nonAtomic.forEach(function(key) {
-		nodes.push({label:isArray ? undefined : key.cyan, nodes:leaf(obj[key])});
+		nodes.push({label:isArray ? undefined : chalk.cyan(key), nodes:leaf(obj[key])});
 	});
 
 	return nodes;
 };
 
 var visit = function(node) {
-	if (node.label) node.label = node.label.yellow;
+	if (node.label) node.label = chalk.yellow(node.label);
 	if (node.nodes) node.nodes = [].concat(node.nodes).map(visit);
 	if (node.leaf)  node.nodes = [].concat(node.nodes || [], leaf(node.leaf));
 	return node;
@@ -51,7 +51,7 @@ var tree = function(node) {
 		.replace(/([├└])─┬ \n[│ ]+├/gm, '$1─┬')
 		.replace(/([├└])─┬ \n[│ ]+└/gm, '$1──')
 		.replace(/[┬├─└│┐]/g, function(_) {
-			return _.grey;
+			return chalk.grey(_);
 		});
 };
 

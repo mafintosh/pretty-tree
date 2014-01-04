@@ -5,7 +5,7 @@
   "repository": "git://github.com/mafintosh/pretty-tree.git",
   "dependencies": {
     "archy": "0.0.2",
-    "colors": "~0.6.2"
+    "chalk": "~0.4.0"
   },
   "keywords": [
     "archy",
