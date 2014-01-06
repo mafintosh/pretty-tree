@@ -1,6 +1,6 @@
 {
   "name": "pretty-tree",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Make colorful trees out of JSON objects using archy",
   "repository": "git://github.com/mafintosh/pretty-tree.git",
   "dependencies": {
