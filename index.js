@@ -43,6 +43,7 @@ var visit = function(node) {
 	if (node.label) node.label = chalk.yellow(node.label);
 	if (node.nodes) node.nodes = [].concat(node.nodes).map(visit);
 	if (node.leaf)  node.nodes = [].concat(node.nodes || [], leaf(node.leaf));
+	if (node.label && (!node.nodes || !node.nodes.length)) node.nodes = [chalk.grey('(empty)')];
 	return node;
 };
 
