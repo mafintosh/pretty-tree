@@ -42,6 +42,8 @@ tree({
 })
 ```
 
+If you want to disable coloring (even when the terminal is a tty) use `tree.plain(options)`
+
 ## License
 
 MIT
